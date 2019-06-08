@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/06/08/hello-world/"/>
+      <content type="html"><![CDATA[<p>This is your very first post.</p><a id="more"></a><h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><h3 id="This-is-my-new-post"><a href="#This-is-my-new-post" class="headerlink" title="This is my new post"></a>This is my new post</h3><p>:)</p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> node </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+</search>
