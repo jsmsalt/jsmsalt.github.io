@@ -1,186 +1,134 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
-<html>
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  
-  
-  <title>  Archivos |   JSMSALT </title>
-
- 
-  
-    <link rel="icon" href="/images/favicon.png">
-  
-
-
-  <link rel="stylesheet" href="/nayo.min.css"> 
-</head>  
-  <body>   
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-      <header class="header">
-	
-  <nav class="header-inner">        
 
-    <span class="iconfont icon-menu mobile-toggle"></span>   	
-
-    <div class="header-logo">
-      <a href="/">
-        <img class="header-logo-img" src="/images/logo.png">
-      </a>
-    </div>
-
-    <div class="header-menu">          
-              
-          
-            <a class="header-menu-link" id="header-menu-home" href="/">
-              <i class="iconfont icon-home">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-archives" href="/archives">
-              <i class="iconfont icon-archives">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-tags" href="/tags">
-              <i class="iconfont icon-tags">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-about" href="/about">
-              <i class="iconfont icon-about">  
-            </i></a>     
-          
-              
-          
-              <a class="header-menu-link" id="header-menu-search">
-                <i class="iconfont icon-search">  
-              </i></a>
-          
-                  
-    </div>  
     
-  </nav>
+      
+    
+
+    <title>  Archivos |   JSMSALT </title>
+  
+    
+      <link rel="icon" href="/images/favicon.png">
+    
+
+    <link rel="stylesheet" href="/tipo.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap" rel="stylesheet">
+  </head>
+  <body class="fadeIn">
+    <div class="page" id="page" :class="{light: lightMode}">
+      <aside class="sidebar">
+        <meta name="generator" content="Hexo 3.9.0"><header class="header">
+    <a href="/" class="logo" :style="{backgroundImage: 'url(' + logoTheme + ')'}">
+    </a>
 </header>
+        <meta name="generator" content="Hexo 3.9.0"><nav class="main-menu">
+    <ul class="menu">
+        
+            
+            
+            <li class="menu-item">
+                <a class="menu-link" href="/"><i class="icon-home"></i> <span>Inicio</span></a>
+            </li>
+        
+            
+            
+            <li class="menu-item">
+                <a class="menu-link menu-active" href="/archives"><i class="icon-calendar"></i> <span>Archivo</span></a>
+            </li>
+        
+            
+            
+            <li class="menu-item">
+                <a class="menu-link" href="/tags"><i class="icon-hash"></i> <span>Etiquetas</span></a>
+            </li>
+        
+            
+            
+            <li class="menu-item">
+                <a class="menu-link" href="/about"><i class="icon-person"></i> <span>Acerca de</span></a>
+            </li>
+        
+            
+            
+            <li class="menu-item">
+                <a class="menu-link" href="/code"><i class="icon-code"></i> <span>Proyectos</span></a>
+            </li>
+        
+    </ul>
+</nav>
+      </aside>
 
-   
-
-      <div class="container">       
-          
-          
-            <div class="container-inner slideDownMin">
-          
-
-          <section class="archive slideDownMin">
-
-  <span class="page-title">Archivos</span>
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-  <div class="archive-part">
-    <span class="archive-part-item">
-      <span>2019</span>
-    </span>
-  </div>
-  
-  
-  <div class="archive-item">
-    <time class="archive-time"> junio 05 </time>
-    <span class="archive-title"> <a href="/2019/06/05/hello-world/">Hello World</a></span>
+      <main class="body">
+        <meta name="generator" content="Hexo 3.9.0"><section class="top-bar-mobile">
+    <a href="#" class="toggle-menu"><i class="icon-menu"></i></a>
+    <a href="/" class="logo">
+        <img class="logo-img" src="/images/logo.png">
+    </a>
+    <a href="#" class="toggle-search" @click="toggleTopBar"><i class="icon-search"></i></a>
+</section>
+        <meta name="generator" content="Hexo 3.9.0"><section class="top-bar" :class="{ show: search.showTopBar }">
+    <div class="link left">
+        
+            <span class="disabled"><i class="icon-arrow-back"></i></span>
+            
+    </div>
+    <div class="link right">
+        
+            <span class="disabled"><i class="icon-arrow-forward"></i></span>
+        
+    </div>
+    <div class="search">
+        <input type="text" class="box" :class="{ show: showResults }" placeholder="Buscar..." v-model="search.input" @focus="searchGetArticles" @blur="searchLostFocus">
+        <ul class="results" :class="{ show: showResults }">
+        <li v-for="r in result" class="result-item">
+            <a :href="`${r.url}`" class="result-link">
+            <div class="title">{{ r.title }}</div>
+            <div class="content">{{ r.content }}</div>
+            </a>
+        </li>
+        </ul>
+    </div>
+    <div class="link right">
+        <a href="#" @click.prevent="toggleTheme" data-tooltip="dia/noche"><i :class="iconTheme"></i></a>
+    </div>
+</section>
+        <meta name="generator" content="Hexo 3.9.0"><main class="content">
+    <section class="inner">
+  <h1 class="title">Archivos</h1>
+  <div class="article list minimal">
+    
+    
+    
+      
+      
+        
+        <h2 class="subtitle">2019</h2>
+        
+      
+      <div class="item">
+        <time class="date"> julio 12 </time>
+        <span class="title"> <a href="/2019/07/12/docker/">Docker</a></span>
+      </div>
+    
+      
+      
+      <div class="item">
+        <time class="date"> junio 05 </time>
+        <span class="title"> <a href="/2019/06/05/hello-world/">Hello World</a></span>
+      </div>
+    
   </div>
 
   
 </section>
-
-
-
-          </div> 
-      </div>            
-    
-    <a id="page-backTop">
-      <span>
-        <i class="iconfont icon-backtotop"></i>
-      </span>
-    </a> 
-
-  
-    
-    <div class="search-container sildeUpMin">
-        <div class="search-header">
-            <input type="text" placeholder="Escribe algo aquí." id="search-input" class="search-input">
-            <span class="search-cancel">
-                <i class="iconfont icon-cancel">
-            </i></span>
-        </div>
-        <div id="search-result" class="search-result"></div>
-    </div>
- 
-     <div class="mobile-menu">      
-
-      
-      <img class="mobile-menu-icon" src="/images/favicon.png">  
-      
-
-         
-            
-
-            <a class="mobile-menu-link" href="/">Inicio
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/archives">Archivos
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/tags">Etiquetas
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/about">Acerca de
-            </a>
-            
-         
-                          
-
-            <a class="mobile-menu-link mobile-menu-search" href="#">Búsqueda </a>                 
-            
-         
-      
-</div>
-        
-    
-
-
-
-     
-    
-
-
-
-
-<footer id="footer">	    
-
+</main>
+        <meta name="generator" content="Hexo 3.9.0"><footer class="footer">
+		<div class="copyright">
+		©
 		
-		<div class="footer-copyright">
-		&copy;
-				
 		2018-
 		
 		2019		
@@ -188,11 +136,21 @@
 		Lemon
 		<br>
 
-		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
-		</div>			
-	 
-</footer>   
+		Theme  <a href="https://github.com/Lemonreds/hexo-theme-tipo" target="_blank">Tipo</a>
+		</div>
+</footer>
+      </main>
+    </div>
 
-    <script src="/nayo.bundle.js"></script>           
-  </body>        
-</html>
+    <script src="/tipo.min.js"></script>
+    
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+	    google_ad_client: "ca-pub-4545844960544361",
+	    enable_page_level_ads: true
+	  });
+	</script>
+  
+
+</body></html>

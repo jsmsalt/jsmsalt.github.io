@@ -1,180 +1,140 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
-<html>
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  
-  
-  <title>  Tags |   JSMSALT </title>
-
- 
-  
-    <link rel="icon" href="/images/favicon.png">
-  
-
-
-  <link rel="stylesheet" href="/nayo.min.css"> 
-</head>  
-  <body>   
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-      <header class="header">
-	
-  <nav class="header-inner">        
 
-    <span class="iconfont icon-menu mobile-toggle"></span>   	
-
-    <div class="header-logo">
-      <a href="/">
-        <img class="header-logo-img" src="/images/logo.png">
-      </a>
-    </div>
-
-    <div class="header-menu">          
-              
-          
-            <a class="header-menu-link" id="header-menu-home" href="/">
-              <i class="iconfont icon-home">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-archives" href="/archives">
-              <i class="iconfont icon-archives">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-tags" href="/tags">
-              <i class="iconfont icon-tags">  
-            </i></a>     
-          
-              
-          
-            <a class="header-menu-link" id="header-menu-about" href="/about">
-              <i class="iconfont icon-about">  
-            </i></a>     
-          
-              
-          
-              <a class="header-menu-link" id="header-menu-search">
-                <i class="iconfont icon-search">  
-              </i></a>
-          
-                  
-    </div>  
     
-  </nav>
+
+    <title>  Tags |   JSMSALT </title>
+  
+    
+      <link rel="icon" href="/images/favicon.png">
+    
+
+    <link rel="stylesheet" href="/tipo.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap" rel="stylesheet">
+  </head>
+  <body class="fadeIn">
+    <div class="page" id="page" :class="{light: lightMode}">
+      <aside class="sidebar">
+        <meta name="generator" content="Hexo 3.9.0"><header class="header">
+    <a href="/" class="logo" :style="{backgroundImage: 'url(' + logoTheme + ')'}">
+    </a>
 </header>
-
-   
-
-      <div class="container">       
-          
-          
-            <div class="container-inner slideDownMin">
-          
-
-          <section>
-    
-
-    <span class="page-title">Etiquetas</span>
-
-    
-    
-    <a class="tag-wrap slideDownMin" href="/tags/javascript/">
-        <span class="iconfont icon-tag-inner"></span>
-        <span class="tag-name"> javascript </span>
-        <span class="tag-count">1</span>
-    </a>
-    
+        <meta name="generator" content="Hexo 3.9.0"><nav class="main-menu">
+    <ul class="menu">
         
-    
-    <a class="tag-wrap slideDownMin" href="/tags/node/">
-        <span class="iconfont icon-tag-inner"></span>
-        <span class="tag-name"> node </span>
-        <span class="tag-count">1</span>
-    </a>
-    
+            
+            
+            <li class="menu-item">
+                <a class="menu-link" href="/"><i class="icon-home"></i> <span>Inicio</span></a>
+            </li>
         
+            
+            
+            <li class="menu-item">
+                <a class="menu-link" href="/archives"><i class="icon-calendar"></i> <span>Archivo</span></a>
+            </li>
+        
+            
+            
+            <li class="menu-item">
+                <a class="menu-link menu-active" href="/tags"><i class="icon-hash"></i> <span>Etiquetas</span></a>
+            </li>
+        
+            
+            
+            <li class="menu-item">
+                <a class="menu-link" href="/about"><i class="icon-person"></i> <span>Acerca de</span></a>
+            </li>
+        
+            
+            
+            <li class="menu-item">
+                <a class="menu-link" href="/code"><i class="icon-code"></i> <span>Proyectos</span></a>
+            </li>
+        
+    </ul>
+</nav>
+      </aside>
 
+      <main class="body">
+        <meta name="generator" content="Hexo 3.9.0"><section class="top-bar-mobile">
+    <a href="#" class="toggle-menu"><i class="icon-menu"></i></a>
+    <a href="/" class="logo">
+        <img class="logo-img" src="/images/logo.png">
+    </a>
+    <a href="#" class="toggle-search" @click="toggleTopBar"><i class="icon-search"></i></a>
+</section>
+        <meta name="generator" content="Hexo 3.9.0"><section class="top-bar" :class="{ show: search.showTopBar }">
+    <div class="link left">
+        
+            <span class="disabled"><i class="icon-arrow-back"></i></span>
+            
+    </div>
+    <div class="link right">
+        
+            <span class="disabled"><i class="icon-arrow-forward"></i></span>
+        
+    </div>
+    <div class="search">
+        <input type="text" class="box" :class="{ show: showResults }" placeholder="Buscar..." v-model="search.input" @focus="searchGetArticles" @blur="searchLostFocus">
+        <ul class="results" :class="{ show: showResults }">
+        <li v-for="r in result" class="result-item">
+            <a :href="`${r.url}`" class="result-link">
+            <div class="title">{{ r.title }}</div>
+            <div class="content">{{ r.content }}</div>
+            </a>
+        </li>
+        </ul>
+    </div>
+    <div class="link right">
+        <a href="#" @click.prevent="toggleTheme" data-tooltip="dia/noche"><i :class="iconTheme"></i></a>
+    </div>
+</section>
+        <meta name="generator" content="Hexo 3.9.0"><main class="content">
+    <section class="inner">
+    
+        <h1 class="title">Etiquetas</h1>
+        <div class="tag list full">  
+            
+                
+                    <a class="item" href="/tags/javascript/">
+                        <span class="name"> javascript </span>
+                        <span class="count">1</span>
+                    </a>
+                
+            
+                
+                    <a class="item" href="/tags/node/">
+                        <span class="name"> node </span>
+                        <span class="count">1</span>
+                    </a>
+                
+            
+                
+                    <a class="item" href="/tags/Docker/">
+                        <span class="name"> Docker </span>
+                        <span class="count">1</span>
+                    </a>
+                
+            
+                
+                    <a class="item" href="/tags/Setup/">
+                        <span class="name"> Setup </span>
+                        <span class="count">1</span>
+                    </a>
+                
+            
+        </div>
     
 </section>
-          </div> 
-      </div>            
-    
-    <a id="page-backTop">
-      <span>
-        <i class="iconfont icon-backtotop"></i>
-      </span>
-    </a> 
-
-  
-    
-    <div class="search-container sildeUpMin">
-        <div class="search-header">
-            <input type="text" placeholder="Escribe algo aquí." id="search-input" class="search-input">
-            <span class="search-cancel">
-                <i class="iconfont icon-cancel">
-            </i></span>
-        </div>
-        <div id="search-result" class="search-result"></div>
-    </div>
- 
-     <div class="mobile-menu">      
-
-      
-      <img class="mobile-menu-icon" src="/images/favicon.png">  
-      
-
-         
-            
-
-            <a class="mobile-menu-link" href="/">Inicio
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/archives">Archivos
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/tags">Etiquetas
-            </a>
-            
-         
-            
-
-            <a class="mobile-menu-link" href="/about">Acerca de
-            </a>
-            
-         
-                          
-
-            <a class="mobile-menu-link mobile-menu-search" href="#">Búsqueda </a>                 
-            
-         
-      
-</div>
-        
-    
-
-
-
-     
-    
-
-
-
-
-<footer id="footer">	    
-
+</main>
+        <meta name="generator" content="Hexo 3.9.0"><footer class="footer">
+		<div class="copyright">
+		©
 		
-		<div class="footer-copyright">
-		&copy;
-				
 		2018-
 		
 		2019		
@@ -182,11 +142,21 @@
 		Lemon
 		<br>
 
-		Theme  <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a>
-		</div>			
-	 
-</footer>   
+		Theme  <a href="https://github.com/Lemonreds/hexo-theme-tipo" target="_blank">Tipo</a>
+		</div>
+</footer>
+      </main>
+    </div>
 
-    <script src="/nayo.bundle.js"></script>           
-  </body>        
-</html>
+    <script src="/tipo.min.js"></script>
+    
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+	    google_ad_client: "ca-pub-4545844960544361",
+	    enable_page_level_ads: true
+	  });
+	</script>
+  
+
+</body></html>
