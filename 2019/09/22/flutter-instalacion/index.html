@@ -6,7 +6,7 @@
 
   
 
-  <title> Proyectos |  DevFeed </title>
+  <title> Instalar Flutter Y Configurar Tu Entorno Sin Emulador |  DevFeed </title>
 
   
   <link rel="icon" href="/images/favicon.png">
@@ -107,20 +107,68 @@
     <div class="card-image">
         <div class="image">
             
+            <img src="https://miro.medium.com/max/5250/1*xC_TLYcq5MO4VGAPgPDqHg.png" alt="Instalar Flutter y configurar tu entorno sin emulador" class="banner">
+            
         </div>
     </div>
     <div class="card-content">
         <div class="content">
-            <h1 class="title">Proyectos</h1>
+            <h1 class="title">Instalar Flutter y configurar tu entorno sin emulador</h1>
             <div class="date">
-                <time>feb. 26, 2019</time>
+                <time>sep. 22, 2019</time>
             </div>
 
             
 
             <div class="body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a consectetur ex. Ut condimentum sed nulla eu lobortis. Nulla ac mollis velit. Cras tincidunt auctor ligula nec blandit. Nunc hendrerit metus a arcu congue molestie. Integer metus dolor, accumsan nec urna vel, molestie pharetra nulla. Vestibulum vitae placerat ligula, non vulputate sem. Nullam sit amet accumsan magna. Praesent vel elit ac leo vulputate bibendum vitae vel urna. Sed eget sodales lorem, a condimentum ipsum.</p>
-<p>Proin tempus mauris vitae tortor imperdiet ornare. Proin at quam ornare, mollis massa sit amet, blandit turpis. Donec tincidunt enim lacus, at commodo dolor mattis tempus. Vivamus lectus massa, sollicitudin a vestibulum aliquam, tempus nec nunc. Vestibulum a pellentesque est. Praesent sagittis lobortis neque vel venenatis. Sed finibus ligula nec tempor ultricies. Proin aliquam euismod erat in ullamcorper. Quisque congue in urna eu porta. Praesent eu nisl a felis consequat bibendum non quis velit. Suspendisse vel mauris sem. Vestibulum viverra auctor dui, sed commodo velit auctor eu.</p>
+                <h2 id="Instalar"><a href="#Instalar" class="headerlink" title="Instalar"></a>Instalar</h2><pre><code>sudo curl -sSL https://get.docker.com | sh
+sudo apt install docker-compose | sh
+sudo groupadd docker
+sudo usermod -aG docker "$USER"</code></pre><p>Hello my world</p>
+<p>sudo groupadd docker</p>
+<p>sudo usermod -aG docker $USER</p>
+<p>docker login -u username</p>
+<p>docker tag first-image {docker-hub-username}/{default-repo-folder-name}:first-image</p>
+<p>docker push {docker-hub-username}/{default-repo-folder-name}:first-image</p>
+<ol>
+<li><a href="https://docs.docker.com/engine/reference/commandline/ps/" target="_blank" rel="noopener">docker ps</a> — Lists running containers. Some useful flags include: <code>-a</code> / <code>-all</code> for all containers (default shows just running) and <code>—-quiet</code> /<code>-q</code> to list just their ids (useful for when you want to get all the containers).</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/pull/" target="_blank" rel="noopener">docker pull</a> — Most of your images will be created on top of a base image from the <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> registry. <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a> contains many pre-built images that you can <code>pull</code> and try without needing to define and configure your own. To download a particular image, or set of images (i.e., a repository), use <code>docker pull</code>.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/build/" target="_blank" rel="noopener">docker build</a> — The <code>docker build</code> command builds Docker images from a Dockerfile and a “context”. A build’s context is the set of files located in the specified <code>PATH</code> or <code>URL</code>. Use the <code>-t</code> flag to label the image, for example <code>docker build -t my_container .</code> with the <code>.</code> at the end signalling to build using the currently directory.</li>
+<li><a href="https://docs.docker.com/engine/reference/run/" target="_blank" rel="noopener">docker run</a> — Run a docker container based on an image, you can follow this on with other commands, such as <code>-it bash</code> to then run bash from within the container. <em>Also see</em> <a href="https://medium.com/the-code-review/top-10-docker-run-command-options-you-cant-live-without-a-reference-d256834e86c1" target="_blank" rel="noopener"><em>Top 10 options for docker run — a quick reference guide for the CLI command</em></a><em>.</em> <code>docker run my_image -it bash</code></li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/logs/" target="_blank" rel="noopener">docker logs </a>— Use this command to display the logs of a container, you must specify a container and can use flags, such as <code>--follow</code> to follow the output in the logs of using the program. <code>docker logs --follow my_container</code></li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/volume_ls/" target="_blank" rel="noopener">docker volume ls</a> — This lists the <a href="https://docs.docker.com/storage/volumes/" target="_blank" rel="noopener">volumes</a>, which are the preferred mechanism for persisting data generated by and used by Docker containers.</li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/rm/" target="_blank" rel="noopener">docker rm</a> — Removes one or more containers. <code>docker rm my_container</code></li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/rmi/" target="_blank" rel="noopener">docker rmi </a>— Removes one or more images. <code>docker rmi my_image</code></li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/stop/" target="_blank" rel="noopener">docker stop</a> — Stops one or more containers. <code>docker stop my_container</code>stops one container, while <code>docker stop $(docker ps -a -q)</code> stops all running containers. A more direct way is to use <code>docker kill my_container</code>, which does not attempt to shut down the process gracefully first.</li>
+<li>Use them together, for example to clean up all your docker images and containers:</li>
+</ol>
+<ul>
+<li>kill all running containers with <code>docker kill $(docker ps -q)</code></li>
+<li>delete all stopped containers with <code>docker rm $(docker ps -a -q)</code></li>
+<li>delete all images with <code>docker rmi -f $(docker images -q)</code></li>
+</ul>
+<p>docker stop $(docker ps -a -q) && docker rm -f $(docker ps -a -q) && docker rmi -f $(docker images -q) && docker system prune</p>
+<p>docker login</p>
+<p>docker build . -t rpi-deluge-filebot</p>
+<p>docker build . -t deluge-filebot-rpi –no-cache</p>
+<p>docker run -d -v /media/hdd/config/deluge:/config -v /media/hdd/data:/data -p 58846:58846 -p 8112:8112 –name=deluge4 rpi-deluge-filebot:latest</p>
+<p>docker exec -i -t deluge4 /bin/bash</p>
+<p>docker tag alpine-telethon-rpi jsmsalt/alpine-telethon-rpi:latest</p>
+<p>docker push jsmsalt/alpine-telethon-rpi:latest</p>
+<p>docker run -it alpine-filebot-rpi -c /bin/sh</p>
+<p>docker run -d -v /home/pi/filebot/script:/script -v /home/pi/filebot/media:/media -v /home/pi/filebot/download:/download -v /home/pi/filebot/log:/log –name=filebot alpine-filebot-rpi:latest</p>
+<p>docker-compose up -d  –remove-orphans –force-recreate</p>
+<h5 id="Cleanup"><a href="#Cleanup" class="headerlink" title="Cleanup"></a>Cleanup</h5><p>If you ran these commands, you have a bunch of stopped containers left on your host. Clean them up:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">docker system prune</span><br></pre></td></tr></tbody></table></figure>
+
+<p>docker run -d -v /media/hdd/config/filebrowser:/config -v /media/hdd/data:/data -p 8080:80 –name=filebrowser filebrowser-rpi</p>
+<p><a href="http://www.johnzaccone.io/entrypoint-vs-cmd-back-to-basics/" target="_blank" rel="noopener">http://www.johnzaccone.io/entrypoint-vs-cmd-back-to-basics/</a></p>
+<p><a href="https://vsupalov.com/debug-docker-container/" target="_blank" rel="noopener">https://vsupalov.com/debug-docker-container/</a></p>
+<p><a href="https://www.sandtable.com/reduce-docker-image-sizes-using-alpine/" target="_blank" rel="noopener">https://www.sandtable.com/reduce-docker-image-sizes-using-alpine/</a></p>
+<p><a href="https://nickjanetakis.com/blog/docker-tip-47-build-time-vs-run-time-env-variables" target="_blank" rel="noopener">https://nickjanetakis.com/blog/docker-tip-47-build-time-vs-run-time-env-variables</a></p>
+<p><a href="http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/" target="_blank" rel="noopener">http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/</a></p>
+<p><a href="https://microbadger.com/" target="_blank" rel="noopener">https://microbadger.com/</a></p>
+<p><a href="https://dockeri.co/" target="_blank" rel="noopener">https://dockeri.co/</a></p>
 
             </div>
         </div>

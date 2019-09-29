@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Dev blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://devfeed.me/"/>
+  <updated>2019-09-23T01:05:47.668Z</updated>
+  <id>http://devfeed.me/</id>
+  
+  <author>
+    <name>José Morales</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Esto es una prueba nada mas</title>
+    <link href="http://devfeed.me/2019/09/22/prueba/"/>
+    <id>http://devfeed.me/2019/09/22/prueba/</id>
+    <published>2019-09-22T16:53:58.654Z</published>
+    <updated>2019-09-23T01:05:47.668Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Instalar&quot;&gt;&lt;a href=&quot;#Instalar&quot; class=&quot;headerlink&quot; title=&quot;Instalar&quot;&gt;&lt;/a&gt;Instalar&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;sudo curl
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Docker" scheme="http://devfeed.me/tags/Docker/"/>
+    
+      <category term="Setup" scheme="http://devfeed.me/tags/Setup/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalar Flutter y configurar tu entorno sin emulador</title>
+    <link href="http://devfeed.me/2019/09/22/flutter-instalacion/"/>
+    <id>http://devfeed.me/2019/09/22/flutter-instalacion/</id>
+    <published>2019-09-22T16:51:10.710Z</published>
+    <updated>2019-09-23T00:44:51.402Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Instalar&quot;&gt;&lt;a href=&quot;#Instalar&quot; class=&quot;headerlink&quot; title=&quot;Instalar&quot;&gt;&lt;/a&gt;Instalar&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;sudo curl
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Docker" scheme="http://devfeed.me/tags/Docker/"/>
+    
+      <category term="Setup" scheme="http://devfeed.me/tags/Setup/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://devfeed.me/2019/06/05/hello-world/"/>
+    <id>http://devfeed.me/2019/06/05/hello-world/</id>
+    <published>2019-06-05T11:45:04.000Z</published>
+    <updated>2019-09-23T01:10:09.857Z</updated>
+    
+    <summary type="html">
+    
+      &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;This is your very first post.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Programación" scheme="http://devfeed.me/categories/Programacion/"/>
+    
+    
+      <category term="javascript" scheme="http://devfeed.me/tags/javascript/"/>
+    
+      <category term="node" scheme="http://devfeed.me/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker</title>
+    <link href="http://devfeed.me/2014/07/02/docker/"/>
+    <id>http://devfeed.me/2014/07/02/docker/</id>
+    <published>2014-07-03T02:44:44.000Z</published>
+    <updated>2019-09-25T05:10:42.664Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;Instalar&quot;&gt;&lt;a href=&quot;#Instalar&quot; class=&quot;headerlink&quot; title=&quot;Instalar&quot;&gt;&lt;/a&gt;Instalar&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;sudo curl
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Javascript" scheme="http://devfeed.me/categories/Javascript/"/>
+    
+    
+      <category term="Docker" scheme="http://devfeed.me/tags/Docker/"/>
+    
+      <category term="Setup" scheme="http://devfeed.me/tags/Setup/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,119 +1,131 @@
 <!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-
-    
-
-    <title>  Hello World |   JSMSALT </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    
-      <link rel="icon" href="/images/favicon.png">
-    
 
-    <link rel="stylesheet" href="/tipo.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap" rel="stylesheet">
-  </head>
-  <body class="fadeIn">
-    <div class="page" id="page" :class="{light: lightMode}">
-      <aside class="sidebar">
-        <meta name="generator" content="Hexo 3.9.0"><header class="header">
-    <a href="/" class="logo" :style="{backgroundImage: 'url(' + logoTheme + ')'}">
-    </a>
-</header>
-        <meta name="generator" content="Hexo 3.9.0"><nav class="main-menu">
-    <ul class="menu">
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/"><i class="icon-home"></i> <span>Inicio</span></a>
-            </li>
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/archives"><i class="icon-calendar"></i> <span>Archivo</span></a>
-            </li>
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/tags"><i class="icon-hash"></i> <span>Etiquetas</span></a>
-            </li>
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/about"><i class="icon-person"></i> <span>Acerca de</span></a>
-            </li>
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/code"><i class="icon-code"></i> <span>Proyectos</span></a>
-            </li>
-        
-    </ul>
-</nav>
-      </aside>
+  
 
-      <main class="body">
-        <meta name="generator" content="Hexo 3.9.0"><section class="top-bar-mobile">
-    <a href="#" class="toggle-menu"><i class="icon-menu"></i></a>
-    <a href="/" class="logo">
-        <img class="logo-img" src="/images/logo.png">
-    </a>
-    <a href="#" class="toggle-search" @click="toggleTopBar"><i class="icon-search"></i></a>
-</section>
-        <meta name="generator" content="Hexo 3.9.0"><section class="top-bar" :class="{ show: search.showTopBar }">
-    <div class="link left">
-        
-            
-            <a href="/2019/07/12/docker/" class="post-nav-link-wrap" data-tooltip="Docker"><i class="icon-arrow-back"></i></a>
-        
-    </div>
-    <div class="link right">
-        
-            <span class="disabled"><i class="icon-arrow-forward"></i></span>
-        
-    </div>
-    <div class="search">
-        <input type="text" class="box" :class="{ show: showResults }" placeholder="Buscar..." v-model="search.input" @focus="searchGetArticles" @blur="searchLostFocus">
-        <ul class="results" :class="{ show: showResults }">
-        <li v-for="r in result" class="result-item">
-            <a :href="`${r.url}`" class="result-link">
-            <div class="title">{{ r.title }}</div>
-            <div class="content">{{ r.content }}</div>
+  <title> Hello World |  DevFeed </title>
+
+  
+  <link rel="icon" href="/images/favicon.png">
+  
+
+  <link rel="stylesheet" href="/tipo.min.css">
+  <script src="/tipo.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-navbar-fixed-top">
+
+  <meta name="generator" content="Hexo 3.9.0"><header id="header">
+
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container slim">
+      <div class="navbar-brand">
+        <a class="navbar-item logo" href="/">
+          <img src="/images/logo.png" alt>
+        </a>
+
+        <a role="button" @click="toggleMenu" class="navbar-burger burger" :class="{'is-active': menu}" aria-label="menu" aria-expanded="false" data-target="mainMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="mainMenu" class="navbar-menu" :class="{'is-active': menu}">
+        <div class="navbar-end">
+
+          
+          
+          
+          <a class="navbar-item" href="/">Inicio</a>
+          
+          
+          
+          <a class="navbar-item" href="/archives">Archivo</a>
+          
+          
+          
+          <a class="navbar-item" href="/tags">Etiquetas</a>
+          
+          
+          
+          <a class="navbar-item" href="/about">Sobre mi</a>
+          
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Categorías
             </a>
-        </li>
-        </ul>
-    </div>
-    <div class="link right">
-        <a href="#" @click.prevent="toggleTheme" data-tooltip="dia/noche"><i :class="iconTheme"></i></a>
-    </div>
-</section>
-        <meta name="generator" content="Hexo 3.9.0"><main class="content">
-    <section class="inner">
-	<article class="article item">
-		<div class="header">
-    <h1 class="title">Hello World</h1>
-    <div class="meta">
-        <time>jun. 05, 2019</time>
-    </div>
 
-    
-</div>
-		<div class="body">
-    
-        <div class="excerpt">
-            <p>This is your very first post.</p>
+            <div class="navbar-dropdown">
+              
+              <a href="/categories/Javascript/" class="navbar-item">Javascript</a>
+              
+              <a href="/categories/Programacion/" class="navbar-item">Programación</a>
+              
+            </div>
+          </div>
+
+          <div class="navbar-item is-hidden-mobile">
+            <div class="buttons">
+              <a class="button is-outlined" @click="toggleSearch"><i class="icon-search"></i></a>
+            </div>
+          </div>
         </div>
-    
+      </div>
+    </div>
+  </nav>
 
-    <div class="content markdown">
-        <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sapien ligula. Vestibulum in condimentum nulla. Integer at orci ullamcorper, mollis tellus nec, accumsan enim. Integer ut odio et nibh vehicula rhoncus. Duis purus velit, pellentesque eget lectus eget, feugiat porta augue. Etiam varius sed lacus id ultricies. Quisque dictum ipsum in vulputate iaculis.</p>
+  <div class="modal" :class="{'is-active': search.show}">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <div class="modal-card-title">
+          <div class="control is-loading">
+            <input class="input is-rounded" type="text" placeholder="Loading input">
+          </div>
+        </div>
+        <button class="delete" aria-label="close" @click="toggleSearch"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+      </section>
+    </div>
+  </div>
+
+</header>
+
+  <main>
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <meta name="generator" content="Hexo 3.9.0"><article class="card article_full">
+    <div class="card-image">
+        <div class="image">
+            
+            <img src="https://res.cloudinary.com/developerayo/image/upload/f_png,q_auto:best/v1557992620/samm-market-app-banner-03.png" alt="Hello World" class="banner">
+            
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <h1 class="title">Hello World</h1>
+            <div class="date">
+                <time>jun. 05, 2019</time>
+            </div>
+
+            
+            <div class="excerpt">
+                <p>This is your very first post.</p>
+            </div>
+            
+
+            <div class="body">
+                <h2 id="Hello"><a href="#Hello" class="headerlink" title="Hello"></a>Hello</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sapien ligula. Vestibulum in condimentum nulla. Integer at orci ullamcorper, mollis tellus nec, accumsan enim. Integer ut odio et nibh vehicula rhoncus. Duis purus velit, pellentesque eget lectus eget, feugiat porta augue. Etiam varius sed lacus id ultricies. Quisque dictum ipsum in vulputate iaculis.</p>
 <figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">"123"</span>, <span class="number">10</span>)</span><br><span class="line"><span class="comment">// 123</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>, <span class="number">10</span>)</span><br><span class="line"><span class="comment">// 10</span></span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta"></span></span><br><span class="line"><span class="tag"><<span class="name">html</span>></span></span><br><span class="line"><span class="tag"><<span class="name">body</span>></span></span><br><span class="line"></span><br><span class="line"><span class="tag"><<span class="name">h1</span>></span>My First Heading<span class="tag">h1</span>></span><br><span class="line"><span class="tag"><<span class="name">p</span>></span>My first paragraph.<span class="tag">p</span>></span><br><span class="line"></span><br><span class="line"><span class="tag">body</span>></span><br><span class="line"><span class="tag">html</span>></span><br></pre></td></tr></tbody></table></figure>
@@ -123,84 +135,126 @@
 <h3 id="This-is-my-new-post"><a href="#This-is-my-new-post" class="headerlink" title="This is my new post"></a>This is my new post</h3><p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pellentesque maximus ipsum, eget varius justo. Praesent ac tincidunt tellus. Sed nisl dolor, dignissim ac eleifend et, suscipit et augue. Duis quis risus sapien. Donec eget erat at tellus sollicitudin molestie quis ac urna. Duis luctus metus at tincidunt condimentum. Vivamus lorem dolor, placerat sed tortor ac, lobortis fringilla augue. Morbi iaculis in leo quis ultrices. Maecenas vulputate viverra magna, ac ullamcorper magna convallis ut.</p>
 <p>Etiam id imperdiet elit. Fusce in augue mollis turpis aliquam efficitur. Nam porta metus bibendum turpis commodo, sed lobortis nibh viverra. Cras at interdum tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vulputate semper dui tempor convallis. Nam tempus sodales velit.</p>
 
-    </div>
-</div>
-		<div class="footer">
-    <div class="meta">
-        <div class="category list minimal">
-            
-                <a class="category-link" href="/categories/Programacion/">Programación</a>
-            
-        </div>
-
-        <div class="tag list minimal">
-            
-                <a class="tag-link" href="/tags/javascript/">javascript</a> <a class="tag-link" href="/tags/node/">node</a>
-            
+            </div>
         </div>
     </div>
+</article>
 
-    
-        <nav class="navigation">
-            <div class="link">
-                
-            </div>
-
-            <div class="link">
-                
-                    
-                    <strong class="post-nav-caption">Nuevo</strong>
-                    <a href="/2019/07/12/docker/" class="post-nav-link-wrap">Docker</a>
-                
-            </div>
-        </nav>
-    
+<div class="meta content">
+    <div class="article_categories">
+        <h3>Categorías</h3>
+        <div class="body">
+            <ul class="data-list"><li class="data-list-item"><a class="data-list-link" href="/categories/Javascript/">Javascript</a></li><li class="data-list-item"><a class="data-list-link" href="/categories/Programacion/">Programación</a></li></ul>
+        </div>
+    </div>
+    <div class="article_tags">
+        <h3>Etiquetas</h3>
+        <div class="body">
+            <ul class="data-list"><li class="data-list-item"><a class="data-list-link" href="/tags/Docker/">Docker</a></li><li class="data-list-item"><a class="data-list-link" href="/tags/Setup/">Setup</a></li><li class="data-list-item"><a class="data-list-link" href="/tags/javascript/">javascript</a></li><li class="data-list-item"><a class="data-list-link" href="/tags/node/">node</a></li></ul>
+        </div>
+    </div>
 </div>
-	</article>
 
-	<div class="comments">
-        <div id="disqus_thread"></div>
+<hr>
 
-        <script>
-        (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = 'https://'+'devfeed'+'.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());    
-        (d.head || d.body).appendChild(s);
+
+<div class="comments">
+    <div id="disqus_thread"></div>
+
+    <script>
+        (function () {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + 'devfeed' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
         })();
-        </script>
+    </script>
 
-        <noscript>Please enable JavaScript to view the  <a href="https://disqus.com/?ref_noscript">comments.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments.</a></noscript>
+</div>
+
+        </div>
+        <div class="column sidebar">
+          <meta name="generator" content="Hexo 3.9.0"><div class="card is-hidden-mobile">
+    <header class="card-header">
+        <p class="card-header-title">
+            Sobre mi
+        </p>
+    </header>
+    <div class="card-content">
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a href="#">Leer
+                    más</a>
+            </p>
+            <hr>
+            <div class="buttons has-addons is-centered">
+                <span class="button is-medium">
+                    <span class="icon is-large">
+                        <i class="fa fa-github icon-github-alt"></i>
+                    </span>
+                </span>
+                <span class="button is-medium">
+                    <span class="icon is-large">
+                        <i class="fa fa-twitter icon-twitter"></i>
+                    </span>
+                </span>
+                <span class="button is-medium">
+                    <span class="icon is-large">
+                        <i class="fa fa-linkedin icon-linkedin"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
     </div>
-
-</section>
-</main>
-        <meta name="generator" content="Hexo 3.9.0"><footer class="footer">
-		<div class="copyright">
-		©
-		
-		2018-
-		
-		2019		
-	
-		Lemon
-		<br>
-
-		Theme  <a href="https://github.com/Lemonreds/hexo-theme-tipo" target="_blank">Tipo</a>
-		</div>
-</footer>
-      </main>
+</div>
+          <meta name="generator" content="Hexo 3.9.0"><div class="card">
+    <div class="card-content">
+        <div class="content">
+            <aside class="menu">
+                <p class="menu-label">
+                    Categorías
+                </p>
+                <ul class="menu-list">
+                    
+                    <li><a href="/categories/Javascript/" class>Javascript</a></li>
+                    
+                    <li><a href="/categories/Programacion/" class>Programación</a></li>
+                    
+                </ul>
+            </aside>
+        </div>
     </div>
+</div>
+          <meta name="generator" content="Hexo 3.9.0"><div class="side-footer">
+    <div class="copyright">
+        ©
+        
+        2019
 
-    <script src="/tipo.min.js"></script>
-    
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	  (adsbygoogle = window.adsbygoogle || []).push({
-	    google_ad_client: "ca-pub-4545844960544361",
-	    enable_page_level_ads: true
-	  });
-	</script>
-  
+        jsmsalt
+        <br>
+
+        Theme <a href="https://github.com/Lemonreds/hexo-theme-tipo" target="_blank">Tipo</a>
+    </div>
+    <p>
+        Diseñado por <a href="#">jsmsalt</a> con <a href="https://bulma.io">Bulma</a>
+    </p>
+    <div>
+        <a class="button is-large">
+            <span class="icon is-medium">
+                <i class="icon-github-alt"></i>
+            </span>
+            <span>GitHub</span>
+        </a>
+    </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
 
 </body></html>

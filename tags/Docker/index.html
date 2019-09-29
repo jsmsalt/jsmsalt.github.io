@@ -1,144 +1,275 @@
 <!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-
-    
-      
-    
-
-    <title>  Etiquetas: Docker |   JSMSALT </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    
-      <link rel="icon" href="/images/favicon.png">
-    
 
-    <link rel="stylesheet" href="/tipo.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap" rel="stylesheet">
-  </head>
-  <body class="fadeIn">
-    <div class="page" id="page" :class="{light: lightMode}">
-      <aside class="sidebar">
-        <meta name="generator" content="Hexo 3.9.0"><header class="header">
-    <a href="/" class="logo" :style="{backgroundImage: 'url(' + logoTheme + ')'}">
-    </a>
-</header>
-        <meta name="generator" content="Hexo 3.9.0"><nav class="main-menu">
-    <ul class="menu">
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/"><i class="icon-home"></i> <span>Inicio</span></a>
-            </li>
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/archives"><i class="icon-calendar"></i> <span>Archivo</span></a>
-            </li>
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link menu-active" href="/tags"><i class="icon-hash"></i> <span>Etiquetas</span></a>
-            </li>
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/about"><i class="icon-person"></i> <span>Acerca de</span></a>
-            </li>
-        
-            
-            
-            <li class="menu-item">
-                <a class="menu-link" href="/code"><i class="icon-code"></i> <span>Proyectos</span></a>
-            </li>
-        
-    </ul>
-</nav>
-      </aside>
+  
+  
+  
 
-      <main class="body">
-        <meta name="generator" content="Hexo 3.9.0"><section class="top-bar-mobile">
-    <a href="#" class="toggle-menu"><i class="icon-menu"></i></a>
-    <a href="/" class="logo">
-        <img class="logo-img" src="/images/logo.png">
-    </a>
-    <a href="#" class="toggle-search" @click="toggleTopBar"><i class="icon-search"></i></a>
-</section>
-        <meta name="generator" content="Hexo 3.9.0"><section class="top-bar" :class="{ show: search.showTopBar }">
-    <div class="link left">
-        
-            <span class="disabled"><i class="icon-arrow-back"></i></span>
-            
-    </div>
-    <div class="link right">
-        
-            <span class="disabled"><i class="icon-arrow-forward"></i></span>
-        
-    </div>
-    <div class="search">
-        <input type="text" class="box" :class="{ show: showResults }" placeholder="Buscar..." v-model="search.input" @focus="searchGetArticles" @blur="searchLostFocus">
-        <ul class="results" :class="{ show: showResults }">
-        <li v-for="r in result" class="result-item">
-            <a :href="`${r.url}`" class="result-link">
-            <div class="title">{{ r.title }}</div>
-            <div class="content">{{ r.content }}</div>
+  <title> Etiquetas: Docker |  DevFeed </title>
+
+  
+  <link rel="icon" href="/images/favicon.png">
+  
+
+  <link rel="stylesheet" href="/tipo.min.css">
+  <script src="/tipo.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-navbar-fixed-top">
+
+  <meta name="generator" content="Hexo 3.9.0"><header id="header">
+
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container slim">
+      <div class="navbar-brand">
+        <a class="navbar-item logo" href="/">
+          <img src="/images/logo.png" alt>
+        </a>
+
+        <a role="button" @click="toggleMenu" class="navbar-burger burger" :class="{'is-active': menu}" aria-label="menu" aria-expanded="false" data-target="mainMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="mainMenu" class="navbar-menu" :class="{'is-active': menu}">
+        <div class="navbar-end">
+
+          
+          
+          
+          <a class="navbar-item" href="/">Inicio</a>
+          
+          
+          
+          <a class="navbar-item" href="/archives">Archivo</a>
+          
+          
+          
+          <a class="navbar-item is-active" href="/tags">Etiquetas</a>
+          
+          
+          
+          <a class="navbar-item" href="/about">Sobre mi</a>
+          
+
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Categorías
             </a>
-        </li>
-        </ul>
-    </div>
-    <div class="link right">
-        <a href="#" @click.prevent="toggleTheme" data-tooltip="dia/noche"><i :class="iconTheme"></i></a>
-    </div>
-</section>
-        <meta name="generator" content="Hexo 3.9.0"><main class="content">
-    <section class="inner">
-    
-        <h1 class="title"># Docker</h1>
-        <div class="article list minimal">
-            
-                	
-                    
-                    <article class="item">
-                        <time class="date"> julio 12 2019</time>
-                        <a class="title" href="/2019/07/12/docker/">Docker</a>
-                    </article>
-                
-            
+
+            <div class="navbar-dropdown">
+              
+              <a href="/categories/Javascript/" class="navbar-item">Javascript</a>
+              
+              <a href="/categories/Programacion/" class="navbar-item">Programación</a>
+              
+            </div>
+          </div>
+
+          <div class="navbar-item is-hidden-mobile">
+            <div class="buttons">
+              <a class="button is-outlined" @click="toggleSearch"><i class="icon-search"></i></a>
+            </div>
+          </div>
         </div>
-    
-</section>
-</main>
-        <meta name="generator" content="Hexo 3.9.0"><footer class="footer">
-		<div class="copyright">
-		©
-		
-		2018-
-		
-		2019		
-	
-		Lemon
-		<br>
-
-		Theme  <a href="https://github.com/Lemonreds/hexo-theme-tipo" target="_blank">Tipo</a>
-		</div>
-</footer>
-      </main>
+      </div>
     </div>
+  </nav>
 
-    <script src="/tipo.min.js"></script>
+  <div class="modal" :class="{'is-active': search.show}">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <div class="modal-card-title">
+          <div class="control is-loading">
+            <input class="input is-rounded" type="text" placeholder="Loading input">
+          </div>
+        </div>
+        <button class="delete" aria-label="close" @click="toggleSearch"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+      </section>
+    </div>
+  </div>
+
+</header>
+
+  <main>
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <meta name="generator" content="Hexo 3.9.0"><div class="columns is-multiline is-slim article_list">
     
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	  (adsbygoogle = window.adsbygoogle || []).push({
-	    google_ad_client: "ca-pub-4545844960544361",
-	    enable_page_level_ads: true
-	  });
-	</script>
-  
+    <div class="column is-12 has-text-centered list_title">
+        <h1 class="title is-1">#Docker</h1>
+        <h2 class="subtitle is-4">Etiqueta</h2>
+    </div>
+    
+
+    
+
+    
+    
+    
+    
+    <div class="column is-6">
+        
+
+        <a href="/2019/09/22/prueba/" title="Esto es una prueba nada mas">
+	<article class="card article_item">
+		<div class="card-image">
+			<figure class="image is-16by9">
+				<img src="http://blog.developer.sabre.com/wp-content/uploads/2019/03/javascript_banner.png" alt="Esto es una prueba nada mas">
+			</figure>
+		</div>
+		<div class="card-content">
+			<div class="content">
+				<time>hace 6 días</time>
+				<h3>Esto es una prueba nada mas</h3>
+			</div>
+		</div>
+	</article>
+</a>
+
+    </div>
+    
+    
+    <div class="column is-6">
+        
+
+        <a href="/2019/09/22/flutter-instalacion/" title="Instalar Flutter y configurar tu entorno sin emulador">
+	<article class="card article_item">
+		<div class="card-image">
+			<figure class="image is-16by9">
+				<img src="https://miro.medium.com/max/5250/1*xC_TLYcq5MO4VGAPgPDqHg.png" alt="Instalar Flutter y configurar tu entorno sin emulador">
+			</figure>
+		</div>
+		<div class="card-content">
+			<div class="content">
+				<time>hace 6 días</time>
+				<h3>Instalar Flutter y configurar tu entorno sin emulador</h3>
+			</div>
+		</div>
+	</article>
+</a>
+
+    </div>
+    
+    
+    <div class="column is-6">
+        
+
+        <a href="/2014/07/02/docker/" title="Docker">
+	<article class="card article_item">
+		<div class="card-image">
+			<figure class="image is-16by9">
+				<img src="https://content.nanobox.io/content/images/2017/06/docker-banner.png" alt="Docker">
+			</figure>
+		</div>
+		<div class="card-content">
+			<div class="content">
+				<time>hace 5 años</time>
+				<h3>Docker</h3>
+			</div>
+		</div>
+	</article>
+</a>
+
+    </div>
+    
+</div>
+
+
+
+        </div>
+        <div class="column sidebar">
+          <meta name="generator" content="Hexo 3.9.0"><div class="card is-hidden-mobile">
+    <header class="card-header">
+        <p class="card-header-title">
+            Sobre mi
+        </p>
+    </header>
+    <div class="card-content">
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a href="#">Leer
+                    más</a>
+            </p>
+            <hr>
+            <div class="buttons has-addons is-centered">
+                <span class="button is-medium">
+                    <span class="icon is-large">
+                        <i class="fa fa-github icon-github-alt"></i>
+                    </span>
+                </span>
+                <span class="button is-medium">
+                    <span class="icon is-large">
+                        <i class="fa fa-twitter icon-twitter"></i>
+                    </span>
+                </span>
+                <span class="button is-medium">
+                    <span class="icon is-large">
+                        <i class="fa fa-linkedin icon-linkedin"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+          <meta name="generator" content="Hexo 3.9.0"><div class="card">
+    <div class="card-content">
+        <div class="content">
+            <aside class="menu">
+                <p class="menu-label">
+                    Categorías
+                </p>
+                <ul class="menu-list">
+                    
+                    <li><a href="/categories/Javascript/" class>Javascript</a></li>
+                    
+                    <li><a href="/categories/Programacion/" class>Programación</a></li>
+                    
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>
+          <meta name="generator" content="Hexo 3.9.0"><div class="side-footer">
+    <div class="copyright">
+        ©
+        
+        2019
+
+        jsmsalt
+        <br>
+
+        Theme <a href="https://github.com/Lemonreds/hexo-theme-tipo" target="_blank">Tipo</a>
+    </div>
+    <p>
+        Diseñado por <a href="#">jsmsalt</a> con <a href="https://bulma.io">Bulma</a>
+    </p>
+    <div>
+        <a class="button is-large">
+            <span class="icon is-medium">
+                <i class="icon-github-alt"></i>
+            </span>
+            <span>GitHub</span>
+        </a>
+    </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
 
 </body></html>
